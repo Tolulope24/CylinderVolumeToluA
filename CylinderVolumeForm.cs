@@ -26,13 +26,19 @@ namespace CylinderVolumeToluA
         {
             double Volume;
 
-            Volume = Math.PI * Math.Pow(Radius, 2);
+            Volume =( Math.PI * Math.Pow(Radius, 2)) * Height;
         }
 
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
+            double userHeight;
+            double userRadius;
 
+            userHeight = Convert.ToDouble(txtHeight.Text);
+            userRadius = Convert.ToDouble(txtRadius.Text);
+
+            this.CalculateVolume(userRadius, userHeight);
         }
     }
 }
