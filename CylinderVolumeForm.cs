@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 /*
- * Created by: First Last
- * Created on: Day-Month-Year
+ * Created by: Tolu Adebayo
+ * Created on: 29-04-2018
  * Created for: ICS3U Programming
  * Daily Assignment – Day #33 - Volume of a Cylinder
- * This program...
+ * This program calculates the volume of a cylinder
 */
 namespace CylinderVolumeToluA
 {
@@ -22,25 +22,30 @@ namespace CylinderVolumeToluA
         {
             InitializeComponent();
         }
-        private void CalculateVolume (double Radius, double Height)
+        private double CalculateVolume (double Radius, double Height)
         {
+            // identify double
             double Volume;
-
-            Volume =Math.Round( Math.PI * Math.Pow(Radius, 2) * Height, 2);
-
-            MessageBox.Show("The Volume is: " + Volume + " Cubic Units" , "Volume Answer");
+            // Get the formula
+            Volume = Math.Round( Math.PI * Math.Pow(Radius, 2) * Height, 2);
+            // Return Volume
+            return Volume;
         }
 
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
+            // identiy Doubles
             double userHeight;
             double userRadius;
-
+            double Volume;
+            // Convert the nukmbers in the text box to doubles
             userHeight = Convert.ToDouble(txtHeight.Text);
             userRadius = Convert.ToDouble(txtRadius.Text);
-
-            this.CalculateVolume(userRadius, userHeight);
+            // Call the function
+            Volume = CalculateVolume(userRadius, userHeight);
+            // Show Message Box
+           MessageBox.Show("The Volume is: " + Volume + " Cubic Units" , "Volume Answer");
         }
     }
 }
